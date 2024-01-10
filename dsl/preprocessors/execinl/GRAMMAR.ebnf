@@ -1,0 +1,11 @@
+# Grammar: ExecINL; Author: Chubak Bidpaa
+## ExecINL is a text preprocessor DSL used to execute a shell command in-line, and replaces the result coming out of STDOUT  in-place. 
+
+preprocess-text ::= { inline-command | text }
+
+inline-command  ::= "#{|" shell-command "|#}"
+
+shell-command   ::= any-char { any-char }
+
+text		::= any-char { any-char }
+any-char	::= ? any-valid-character ?
